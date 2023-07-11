@@ -1,10 +1,21 @@
 name: End-to-end tests
 on: push
 jobs:
-  cypress-run:
+  cypress-run-gui:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          command: npm run test:gui
+  cypress-run-api:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test:api

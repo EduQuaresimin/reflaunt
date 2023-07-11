@@ -7,9 +7,13 @@ describe('Contact-us', () => {
   })
   context('Positive functional scenarios', () => {
     it('Validate the submission of the "contact-us" form by filling in all fields correctly', () => {
+      cy.intercept('POST', 'https://api.reflaunt.com/api/v1/transfer/join-us', { body: 'Email Sent!'}).as('emailSent')
+      
       cy.fillContactUsForm()
 
       cy.contains('button', 'Submit').should('be.visible')
+      //cy.contains('button', 'Submit').click()
+      //cy.wait('@emailSent').its('response.body').should('be.equal', 'Email Sent!')
     })
   })
   context('Negative functional scenarios', () => {
