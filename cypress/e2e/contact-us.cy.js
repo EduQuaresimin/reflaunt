@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
 
 describe('Contact-us', () => {
@@ -20,12 +21,13 @@ describe('Contact-us', () => {
 
       cy.get('#name').should('have.css', 'border-color', 'rgb(218, 7, 20)')
     })   
-    it('Validate the submission of the "contact-us" form without using the character "@" at "Email" field', () => {
+    it('Validate the submission of the "contact-us" form without filling in the "Email" field', () => {
       cy.get('#name').type(faker.lorem.word())
-      cy.get('#email').type(faker.lorem.word())
       cy.get('#organisation').type(faker.lorem.word())
       cy.get('#message').type(faker.lorem.words(10))
       cy.contains('button', 'Submit').click()
+
+      cy.get('#email').should('have.css', 'border-color', 'rgb(218, 7, 20)')
     })
     it('Validate the submission of the "contact-us" form without filling in the "Organisation" field', () => {
       cy.get('#name').type(faker.lorem.words(2))
