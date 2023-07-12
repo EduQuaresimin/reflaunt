@@ -20,17 +20,8 @@ Run `npm install` (or `npm i` for the short version) to install the dev dependen
 
 ## Tests
 
-<<<<<<< HEAD
-=======
-Run `npm test` to run the test in headless mode.
-
->>>>>>> 8079be62aa868a443c430e2bc68cec1e1ab35c3a
 Run `npm run cy:open` to open Cypress in interactive mode.
 
 Run `npm run test:gui` to run all graphical user interface test in headless mode.
 
-<<<<<<< HEAD
 Run `npm run test:api` to run all application programming interface in headless mode.
-=======
-Run `npm run test:api` to run all application programming interface in headless mode.
->>>>>>> 8079be62aa868a443c430e2bc68cec1e1ab35c3a
