@@ -8,10 +8,11 @@
   "description": "Test automation project for Reflaunt's technical interview",
   "private": true,
   "scripts": {
-    "cy:open": "cypress open",
     "test": "cypress run",
+    "cy:open": "cypress open",
     "test:gui": "cypress run --spec 'cypress/e2e/contact-us.cy.js'",
-    "test:api": "cypress run --spec 'cypress/e2e/exampleApi.cy.js'"
+    "test:api": "cypress run --spec 'cypress/e2e/exampleApi.cy.js'",
+    "test:mobile": "cypress run --spec 'cypress/e2e/contact-us.cy.js' --config viewportWidth= 375, viewportHeight= 667"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
